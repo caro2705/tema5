@@ -13,11 +13,11 @@
         let længde = prompt("Angiv længde");
         let bredde = prompt("Angiv bredde");
         let areal = længde * bredde;
-
-        let resultat = `Arealet er ${areal}. Har du brug for et nyt areal?`;
-        confirm(resultat);
-
-        if (confirm) {
+//
+// let resultat = `Arealet er ${areal}. Har du brug for et nyt areal?`;
+//
+// confirm(resultat);
+        if (confirm(`Arealet er ${areal}. Har du brug for et nyt areal?`)) {
             location.reload();
         }
     </script>
