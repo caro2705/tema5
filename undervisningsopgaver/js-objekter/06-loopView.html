@@ -51,11 +51,18 @@
                 dest.innerHTML += `${dyr.navn}, ${dyr.type} fra ${dyr.levested}<br>`;
             })
         }
+        console.log(liste);
+
+          let navn = `${dyr.navn}`;
+        let type = `${dyr.type}`;
+        let levested = `${dyr.levested}`;
 
 
+        dest.querySelector("h2").textContent = navn;
+        dest.querySelector("p").textContent += type;
+        dest.querySelector("p + p").textContent += levested;
 
-
-        console.log(dyr);
+        dest.querySelector("img").src = dyr.billede;
     </script>
 </body>
 </html>
