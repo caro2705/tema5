@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
+        .dyr {
+            border: solid pink;
+            margin: 10px;
+            width: 200px;
+        }
     </style>
 </head>
 
 
 <body>
-
     <div id="liste">
+
 
     </div>
     <script>
@@ -21,7 +27,7 @@
             "billede": "http://helf-kea.dk/test/gris.png",
             "levested": "Svinefarme"
         }, {
-            "navn": "Frø",
+            "navn": "Froe",
             "type": "Krybdyr",
             "billede": "http://helf-kea.dk/test/frø.png",
             "levested": "Søer"
@@ -47,22 +53,16 @@
 
         function start() {
             let dest = document.querySelector("#liste");
-            dyr.forEach(dyr => {
-                dest.innerHTML += `${dyr.navn}, ${dyr.type} fra ${dyr.levested}<br>`;
-            })
+
+            function visDyr() {
+                dyr.forEach(dyr => {
+                    dest.innerHTML += `<div class=dyr> <h3>${dyr.navn}</h3> <img src=${dyr.billede}> <p>Type: ${dyr.type} <br>Levested: ${dyr.levested}</p> <br> `;
+
+                })
+            }
+            visDyr();
         }
-        console.log(liste);
-
-          let navn = `${dyr.navn}`;
-        let type = `${dyr.type}`;
-        let levested = `${dyr.levested}`;
-
-
-        dest.querySelector("h2").textContent = navn;
-        dest.querySelector("p").textContent += type;
-        dest.querySelector("p + p").textContent += levested;
-
-        dest.querySelector("img").src = dyr.billede;
     </script>
 </body>
+
 </html>
